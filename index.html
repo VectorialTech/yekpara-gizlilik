@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>yekpara — Gizlilik Politikası</title>
+<meta name="description" content="yekpara mobil uygulamasının kişisel verileri nasıl işlediğini açıklayan gizlilik politikası ve KVKK aydınlatma metni.">
+<link rel="icon" href="ikon.png">
+
+<!--
+  GitHub Pages ile yayımlanır: repo → Settings → Pages → Source:
+  "Deploy from a branch" → main → /docs.
+
+  NEDEN HTML, markdown DEĞİL: Play ve App Store gizlilik politikası için bir
+  ADRES istiyor, dosya kabul etmiyor. Pages markdown'ı da render eder ama
+  temasız bir sayfa çıkar ve mağaza incelemesi bunu "eksik" sayabiliyor.
+
+  KAYNAK METİN `store/gizlilik-politikasi.md`. İkisi AYRIŞMAMALI: metin
+  orada değişirse burası da değişir. Ayrı durmalarının sebebi, deponun
+  içindeki metnin okunabilir kalması ve bu sayfanın mağazaya gidecek
+  biçimde durması.
+
+  İKON `assets/icon.png`in kopyası (docs/ikon.png). Kopya olduğu için
+  ayrışabilir; `npm run test:icons` ikisinin aynı olduğunu denetliyor.
+-->
+
+<style>
+  :root {
+    --sayfa: #EFE9E4;      /* uygulamanın sayfa rengi */
+    --yuzey: #FFFFFF;
+    --ink: #141414;
+    --ink-soft: #67655F;
+    --cizgi: #E0D8D1;
+    --lime: #D8F26B;
+    --lavanta: #CFC6F2;
+    --camgobegi: #A1D0ED;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--sayfa);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .kap { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+  header { display: flex; align-items: center; gap: .9rem; margin-bottom: .25rem; }
+  header img { width: 56px; height: 56px; border-radius: 13px; display: block; }
+  header h1 { font-size: 1.5rem; margin: 0; letter-spacing: -.01em; }
+  .tarih { color: var(--ink-soft); font-size: .9rem; margin: 0 0 1.75rem; }
+
+  section {
+    background: var(--yuzey);
+    border: 1px solid var(--cizgi);
+    border-radius: 18px;
+    padding: 1.25rem 1.35rem;
+    margin: 0 0 1rem;
+  }
+  h2 { font-size: 1.1rem; margin: 0 0 .6rem; }
+  h3 { font-size: .95rem; margin: 1.1rem 0 .3rem; }
+  p, li { color: #33322F; }
+  p { margin: .6rem 0; }
+  ul { margin: .5rem 0; padding-left: 1.15rem; }
+  li { margin: .3rem 0; }
+  a { color: #1C1B1F; text-underline-offset: 3px; }
+  code { background: var(--sayfa); padding: .1rem .35rem; border-radius: 6px; font-size: .9em; }
+
+  table { width: 100%; border-collapse: collapse; margin: .75rem 0; font-size: .92rem; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--cizgi); vertical-align: top; }
+  th { color: var(--ink-soft); font-weight: 600; }
+
+  .vurgu { border-left: 4px solid var(--camgobegi); padding-left: .9rem; }
+  .serit { height: 6px; border-radius: 99px; display: flex; overflow: hidden; margin: 2rem 0 1rem; }
+  .serit i { display: block; height: 100%; }
+  footer { color: var(--ink-soft); font-size: .85rem; text-align: center; margin-top: 2rem; }
+
+  @media (prefers-color-scheme: dark) {
+    :root { --sayfa: #141414; --yuzey: #1C1B1F; --ink: #F5F3F0; --ink-soft: #A3A099; --cizgi: #2E2C2A; }
+    p, li { color: #D8D5D0; }
+    a { color: #F5F3F0; }
+    code { background: #2E2C2A; }
+  }
+</style>
+</head>
+<body>
+<div class="kap">
+
+  <header>
+    <img src="ikon.png" alt="yekpara">
+    <h1>yekpara — Gizlilik Politikası</h1>
+  </header>
+  <p class="tarih">Son güncelleme: 29 Ekim 2026</p>
+
+  <section>
+    <p>
+      Bu politika, <strong>VECTORİAL TEKNOLOJİ LİMİTED ŞİRKETİ</strong> (bundan sonra
+      “biz”) tarafından geliştirilen <strong>yekpara</strong> mobil
+      uygulamasının kişisel verileri nasıl işlediğini açıklar. Veri sorumlusu
+      VECTORİAL TEKNOLOJİ LİMİTED ŞİRKETİ'dir.
+    </p>
+    <p>
+      İletişim: <strong>info@vectorialtech.com</strong> ·
+      <a href="https://vectorialtech.com">vectorialtech.com</a>
+    </p>
+  </section>
+
+  <div class="serit">
+    <i style="background:var(--lime);flex:4"></i>
+    <i style="background:var(--lavanta);flex:3"></i>
+    <i style="background:var(--camgobegi);flex:2"></i>
+  </div>
+
+  <section>
+    <h2>1. Uygulama ne yapar?</h2>
+    <p>
+      yekpara, sahip olduğun <strong>altın, gümüş ve dövizin</strong> güncel
+      Türk Lirası değerini tek ekranda gösterir. Kaç gram altının ya da kaç
+      doların olduğunu sen girersin; uygulama güncel fiyatla çarpıp toplamı
+      hesaplar.
+    </p>
+    <p class="vurgu">
+      <strong>Banka hesabına bağlanmaz.</strong> Hiçbir bankayla bağlantı
+      kurmaz, ekstre okumaz, kart bilgisi istemez. Girdiğin veri senin elle
+      yazdığın veridir.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Hangi verileri işliyoruz?</h2>
+
+    <h3>Hesap bilgileri</h3>
+    <ul>
+      <li>E-posta adresin (giriş için).</li>
+      <li>Parolan — <strong>parolayı biz görmüyoruz.</strong> Kimlik doğrulama
+        altyapımız parolayı geri döndürülemez biçimde (hash) saklar.</li>
+    </ul>
+
+    <h3>Senin girdiğin portföy verisi</h3>
+    <ul>
+      <li>Varlık türü ve sembolü (örneğin gram altın, ABD doları).</li>
+      <li>Adet (kaç gram, kaç birim).</li>
+      <li>İsteğe bağlı: bu varlığa ödediğin toplam tutar ve elle girdiğin fiyat.</li>
+    </ul>
+
+    <h3>Teknik ve kayıt verisi</h3>
+    <ul>
+      <li>Oturum belirteci (giriş yapmış kalman için).</li>
+      <li>Kayıtların oluşturulma ve güncellenme zaman damgaları.</li>
+    </ul>
+
+    <h3>İşlemediğimiz veriler</h3>
+    <p>
+      Konum, rehber, fotoğraflar, reklam kimliği, cihaz tanımlayıcıları,
+      banka/kart bilgileri, kimlik numarası. Uygulamada
+      <strong>reklam ağı, analitik veya izleme aracı yok</strong>;
+      davranışını ölçmüyoruz.
+    </p>
+  </section>
+
+  <section>
+    <h2>3. Verileri neden işliyoruz?</h2>
+    <table>
+      <thead>
+        <tr><th>Amaç</th><th>İşlenen veri</th><th>Hukuki sebep (KVKK m.5 / GDPR m.6)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hesabını oluşturmak ve girişini sağlamak</td><td>e-posta, parola özeti</td><td>Sözleşmenin ifası</td></tr>
+        <tr><td>Portföyünü saklamak ve değerini hesaplamak</td><td>portföy verisi</td><td>Sözleşmenin ifası</td></tr>
+        <tr><td>Güvenlik, kötüye kullanımı önleme</td><td>oturum ve zaman damgaları</td><td>Meşru menfaat</td></tr>
+      </tbody>
+    </table>
+    <p class="vurgu">
+      Verilerini <strong>pazarlama için kullanmıyoruz, satmıyoruz</strong> ve
+      üçüncü taraflara reklam amacıyla aktarmıyoruz.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Üçüncü taraflar</h2>
+    <p>
+      <strong>Supabase</strong> — veritabanı ve kimlik doğrulama altyapısı.
+      Verilerin burada, bizim adımıza (veri işleyen sıfatıyla) saklanır.
+      Sunucular yurt dışında bulunabilir; bu durumda veriler yurt dışına
+      aktarılmış olur.
+    </p>
+    <p>
+      <strong>Fiyat kaynakları</strong> — CoinGecko (değerli maden fiyatının
+      türetildiği kaynak) ve T.C. Merkez Bankası (döviz kuru).
+    </p>
+    <p class="vurgu">
+      <strong>ÖNEMLİ:</strong> Fiyat sorgusunu <strong>senin cihazın değil,
+      bizim sunucumuz</strong> yapar ve bu sorguda yalnızca
+      <strong>varlık sembolü</strong> (örneğin <code>XAU</code>,
+      <code>USD</code>) gider. Kimliğin, e-postan ve kaç gram altının olduğu
+      bu kaynaklara <strong>hiçbir zaman gönderilmez</strong>. Fiyatlar bütün
+      kullanıcılar için ortak olarak önbelleğe alınır.
+    </p>
+  </section>
+
+  <section>
+    <h2>5. Fiyatlar hakkında</h2>
+    <p>
+      Gösterilen fiyatlar <strong>gecikmelidir</strong> ve ekran her zaman
+      fiyatın ne kadar önce güncellendiğini yazar. Gram altın ve gümüş
+      fiyatı, ons fiyatından hesaplanan <strong>türetilmiş</strong> bir
+      değerdir; kuyumcu fiyatı değildir. Döviz kuru TCMB’nin resmî günlük
+      kurudur.
+    </p>
+    <p>
+      yekpara <strong>yatırım tavsiyesi vermez</strong>, alım-satım
+      aracılığı yapmaz ve finansal kuruluş değildir.
+    </p>
+  </section>
+
+  <section id="hesap-silme">
+    <h2>6. Verilerin saklanması ve silinmesi</h2>
+    <p>Verilerin, sen silene kadar saklanır.</p>
+
+    <h3>Uygulama içinden silme</h3>
+    <p>
+      <strong>Ayarlar → Hesabı sil.</strong> Onay verdiğinde hesabın ve ona
+      bağlı <strong>tüm portföy verisi kalıcı olarak</strong> silinir. Bu
+      işlem geri alınamaz.
+    </p>
+
+    <h3>Uygulamayı kurmadan silme talebi</h3>
+    <p>
+      Uygulamaya erişimin yoksa, hesabının silinmesini
+      <strong>info@vectorialtech.com</strong> adresine yazarak talep
+      edebilirsin. Talebi, hesabın e-posta adresinden gönderdiğinde kimlik
+      doğrulaması için ek bilgi istemiyoruz. Silme işlemi en geç
+      <strong>30 gün</strong> içinde tamamlanır ve sana bildirilir.
+    </p>
+    <p>
+      Silinen veriler: hesabın, portföy kayıtların ve sahibi olduğun hesap
+      grupları. Yedeklerdeki kopyalar yedek döngüsü içinde (en fazla 30 gün)
+      kendiliğinden düşer.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Güvenlik</h2>
+    <p>
+      Veriler aktarım sırasında şifrelenir (HTTPS). Veritabanında
+      <strong>satır düzeyi güvenlik</strong> uygulanır: her kullanıcı
+      yalnızca kendi kayıtlarına erişebilir, bu kısıt veritabanının
+      kendisinde tanımlıdır.
+    </p>
+  </section>
+
+  <section>
+    <h2>8. Haklarınız</h2>
+    <p>
+      KVKK m.11 ve GDPR kapsamında; verilerinin işlenip işlenmediğini
+      öğrenme, bunlara erişme, düzeltilmesini veya silinmesini isteme,
+      işlemeye itiraz etme ve veri taşınabilirliği haklarına sahipsin.
+      Başvurularını yukarıdaki e-posta adresine iletebilirsin; en geç 30 gün
+      içinde yanıtlanır.
+    </p>
+  </section>
+
+  <section>
+    <h2>9. Çocuklar</h2>
+    <p>
+      yekpara 13 yaşın altındaki çocuklara yönelik değildir ve bilerek
+      onlardan veri toplamaz.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Değişiklikler</h2>
+    <p>
+      Bu politika değişirse bu sayfadaki “Son güncelleme” tarihi güncellenir.
+      Önemli değişikliklerde uygulama içinde bilgilendirme yapılır.
+    </p>
+  </section>
+
+  <footer>yekpara · VECTORİAL TEKNOLOJİ LİMİTED ŞİRKETİ</footer>
+</div>
+</body>
+</html>
