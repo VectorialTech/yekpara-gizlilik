@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>yekpara — E-posta adresin onaylandı</title>
+<meta name="description" content="yekpara hesabının e-posta adresi onaylandı. Uygulamaya dönüp giriş yapabilirsin.">
+<link rel="icon" href="ikon.png">
+
+<!--
+  KAYIT ONAY E-POSTASININ INDIGI SAYFA.
+
+  NEDEN VAR: `supabase.auth.signUp()` cagrisi bir adres belirtmiyor, bu yuzden
+  Supabase projenin "Site URL" ayarina yonlendiriyor. O ayar gelistirme
+  gunlerinden kalma `localhost` idi ve TELEFONDA olu bir sayfa aciyordu:
+  "localhost refused to connect (-102)".
+
+  OLCULDU (29 Ekim 2026): gercek bir kullanici APK'yi kurup kayit oldu ve tam
+  bu hatayi gordu. Hesap ASLINDA onaylanmisti -- GoTrue once jetonu dogrulayip
+  `email_confirmed_at` yaziyor, SONRA yonlendiriyor. Yani kusur islevsel degil
+  gorsel; ama kullanici hatayi gorunce kaydinin bozuldugunu saniyor.
+
+  Bu sayfa o yonlendirmenin indigi yer. Supabase -> Authentication ->
+  URL Configuration -> Site URL bu adresi gosterir.
+
+  TOKEN TASIMAZ ve tasimamali: GoTrue adresin sonuna `#access_token=...`
+  ekleyebiliyor. Burasi statik bir sayfa, onu okumuyor ve okumamali --
+  jetonu bir web sayfasinda islemek, uygulamanin oturumunu tarayiciya
+  tasimak demek olurdu.
+
+  SIFRE SIFIRLAMA AKISI YOK (kodda `resetPasswordForEmail` gecmiyor), yani
+  Site URL su an yalnizca kayit onayina hizmet ediyor. Boyle bir akis
+  eklenirse bu sayfa YETMEZ: sifre sifirlama, jetonu okuyup yeni sifre
+  alan GERCEK bir sayfa ister.
+-->
+
+<style>
+  :root {
+    --sayfa: #EFE9E4;
+    --yuzey: #FFFFFF;
+    --ink: #141414;
+    --ink-soft: #67655F;
+    --cizgi: #E0D8D1;
+    --lime: #D8F26B;
+    --lavanta: #CFC6F2;
+    --camgobegi: #A1D0ED;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--sayfa);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .kap { max-width: 30rem; width: 100%; padding: 2rem 1.25rem; }
+
+  .kart {
+    background: var(--yuzey);
+    border: 1px solid var(--cizgi);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .tik {
+    width: 72px; height: 72px; margin: 0 auto 1.25rem;
+    border-radius: 99px; background: var(--lime);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tik svg { width: 34px; height: 34px; }
+  h1 { font-size: 1.4rem; margin: 0 0 .6rem; letter-spacing: -.01em; }
+  p { color: #33322F; margin: .6rem 0; }
+  .ince { color: var(--ink-soft); font-size: .9rem; }
+
+  .serit { height: 6px; border-radius: 99px; display: flex; overflow: hidden; margin: 1.75rem 0 1rem; }
+  .serit i { display: block; height: 100%; flex: 1; }
+
+  footer { color: var(--ink-soft); font-size: .85rem; text-align: center; }
+  footer a { color: var(--ink-soft); text-underline-offset: 3px; }
+
+  @media (prefers-color-scheme: dark) {
+    :root { --sayfa: #141414; --yuzey: #1C1B1F; --ink: #F5F3F0; --ink-soft: #A3A099; --cizgi: #2E2C2A; }
+    p { color: #D8D5D0; }
+  }
+</style>
+</head>
+<body>
+  <div class="kap">
+    <div class="kart">
+      <div class="tik" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h1>E-posta adresin onaylandı</h1>
+      <p>Hesabın hazır. <strong>yekpara</strong> uygulamasına dönüp giriş yapabilirsin.</p>
+      <p class="ince">Bu sayfayı kapatabilirsin.</p>
+      <div class="serit" role="presentation">
+        <i style="background:var(--lime)"></i>
+        <i style="background:var(--lavanta)"></i>
+        <i style="background:var(--camgobegi)"></i>
+      </div>
+    </div>
+    <footer>
+      <p><a href="./">Gizlilik politikası</a></p>
+    </footer>
+  </div>
+</body>
+</html>
